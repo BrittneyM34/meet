@@ -5,7 +5,7 @@ const calendar = google.calendar("v3");
 const SCOPES = ["https://www.googleapis.com/auth/calendar.events.public.readonly"];
 const { CLIENT_SECRET, CLIENT_ID, CALENDAR_ID } = process.env;
 const redirect_uris = [
-  "https://BrittneyM34.github.io/meet/"
+  "https://brittneym34.github.io/meet/"
 ];
 
 const oAuth2Client = new google.auth.OAuth2(
@@ -15,15 +15,14 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 
 module.exports.getAuthURL = async () => {
-  // Scopes array is passed to the `scope` option.
 
-  const authUrl = oAuth2Client.generateAuthUrl ({
+  const authUrl = oAuth2Client.generateAuthUrl({
     access_type: "offline",
     scope: SCOPES,
   });
 
   return {
-    statusCode:200,
+    statusCode: 200,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credentials': true,
