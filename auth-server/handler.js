@@ -52,7 +52,7 @@ module.exports.getAccessToken = async (event) => {
       // Respond with OAuth token
       return {
         statusCode: 200,
-        headers: {
+        headers: { 
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Credentials': true,
         },
