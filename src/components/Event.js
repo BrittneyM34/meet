@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Event = ({ event }) => {
+const Event = ({event}) => {
     const [showDetails, setShowDetails] = useState(false);
     return (
         <li className="event">
@@ -11,7 +11,6 @@ const Event = ({ event }) => {
                 className="details-button"
                 onClick={() => setShowDetails(!showDetails)}>
                 {showDetails ? 'hide details' : 'show details'}
-                {showDetails ? "hide details" : "show details"}
             </button>
             {showDetails ? (
                 <div className="details">
