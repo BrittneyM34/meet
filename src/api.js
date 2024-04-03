@@ -63,7 +63,7 @@ export const getAccessToken = async () => {
 };
 
 const checkToken = async (accessToken) => {
-  const response = await fetch(`https://bz3tv3bz0e.execute-api.us-east-2.amazonaws.com/dev/api/get-events/{access_token}`
+  const response = await fetch(`https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   );
   const result = await response.json();
   return result;
