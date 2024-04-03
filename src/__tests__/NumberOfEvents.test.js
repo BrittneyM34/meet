@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import NumberOfEvents from "../components/NumberOfEvents";
 import userEvent from "@testing-library/user-event";
 
-describe('<NumberOfEvents /> comeponent', () => {
+describe('<NumberOfEvents /> component', () => {
     let NumberOfEventsComponent;
     beforeEach(() => {
         NumberOfEventsComponent = render(<NumberOfEvents setNumberOfEvents={() => {}} />);
