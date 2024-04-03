@@ -6,13 +6,6 @@ export const extractLocations = (events) => {
   return locations;
 };
 
-const checkToken = async (accessToken) => {
-  const response = await fetch(`https://bz3tv3bz0e.execute-api.us-east-2.amazonaws.com/dev/api/get-events/{access_token}`
-  );
-  const result = await response.json();
-  return result;
-}
-
 // This function will fetch the list of all events
 export const getEvents = async () => {
   if (window.location.href.startsWith('http://localhost')) {
@@ -49,6 +42,7 @@ const removeQuery = () => {
 
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
+
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
   if (!accessToken || tokenCheck.error) {
@@ -67,6 +61,13 @@ export const getAccessToken = async () => {
   }
   return accessToken;
 };
+
+const checkToken = async (accessToken) => {
+  const response = await fetch(`https://bz3tv3bz0e.execute-api.us-east-2.amazonaws.com/dev/api/get-events/{access_token}`
+  );
+  const result = await response.json();
+  return result;
+}
 
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
