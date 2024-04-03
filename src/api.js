@@ -6,7 +6,6 @@ export const extractLocations = (events) => {
   return locations;
 };
 
-// This function will fetch the list of all events
 export const getEvents = async () => {
   if (window.location.href.startsWith('http://localhost')) {
     return mockData;
@@ -16,7 +15,7 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    const url = "https://bz3tv3bz0e.execute-api.us-east-2.amazonaws.com/dev/api/get-events" + "/" + token;
+    const url = "https://a8a7uyfk80.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" + "/" + token;
     const response = await fetch(url);
     const result = await response.json();
     if (result) {
