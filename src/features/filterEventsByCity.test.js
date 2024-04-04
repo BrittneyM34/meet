@@ -54,8 +54,7 @@ defineFeature(feature, test => {
     });
     
     // Scenario 3
-    test('User can select a city from the suggested list', ({ given, and, when, then }) => {
-
+    test('User can select a city from the suggested list.', ({ given, and, when, then }) => {
         let AppComponent;
         let AppDOM;
         let CitySearchDOM;
