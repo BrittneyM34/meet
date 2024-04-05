@@ -7,14 +7,13 @@ const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
 
 defineFeature(feature, test => {
     // Scenario 1
-    test('When the user hasn’t specified a number, 32 events are shown by default', ({ given, when, then }) => {
+    test('When the user hasn\'t specified a number, 32 events are shown by default', ({ given, when, then }) => {
+        let AppComponent;
         given('a user has not specified the number of events', () => {
-
+            AppComponent = render(<App />);
         });
 
-        let AppComponent
         when('the user views the events section', () => {
-            AppComponent = render(<App />);
             const AppDOM = AppComponent.container.firstChild;
             const EventListDOM = AppDOM.querySelector('#event-list');
             expect(EventListDOM).toBeInTheDocument();
@@ -35,10 +34,10 @@ defineFeature(feature, test => {
         let AppComponent;
         given('a user has specified the number of events', async () => {
             const user = userEvent.setup();
-            AppComponent = (<App />);
+            AppComponent = render(<App />);
             const AppDOM = AppComponent.container.firstChild;
             const NumberOfEventsDOM = AppDOM.querySelector('#number-of-events');
-            const numberOfEventsInput = within(NumberOfEventsDOM).queryByRole('spinbutton');
+            const numberOfEventsInput = within(NumberOfEventsDOM).queryByRole('textbox');
             await user.type(numberOfEventsInput, '{backspace}{backspace}10');
         });
 
