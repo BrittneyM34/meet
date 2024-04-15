@@ -6,6 +6,7 @@ export const extractLocations = (events) => {
   return locations;
 };
 
+// This function will fetch the list of all events
 export const getEvents = async () => {
   if (window.location.href.startsWith('http://localhost')) {
     return mockData;
@@ -45,6 +46,7 @@ const removeQuery = () => {
   }
 };
 
+// Getting the Access Token
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
 
@@ -67,6 +69,7 @@ export const getAccessToken = async () => {
   return accessToken;
 };
 
+// checkToken function
 const checkToken = async (accessToken) => {
   const response = await fetch(`https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   );
@@ -74,6 +77,7 @@ const checkToken = async (accessToken) => {
   return result;
 }
 
+// getToken  function
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const response = await fetch(
