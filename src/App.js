@@ -1,9 +1,7 @@
 import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
-import { InfoAlert } from './components/Alert';
-import { ErrorAlert } from './components/Alert';
-import { WarningAlert } from './components/Alert';
+import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import { useEffect, useState } from 'react';
 import { getEvents, extractLocations } from './api';
 
