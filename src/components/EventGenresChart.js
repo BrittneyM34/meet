@@ -4,10 +4,11 @@ import {
     PieChart,
     Pie,
     Legend,
-    Tooltip
+    Tooltip,
+    Cell
 } from 'recharts';
 
-const genres = ['React', 'Javascript', 'Node', 'jQuery', 'Angular'];
+const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
 const EventGenresChart = ({ events }) => {
     const [data, setData] = useState([]);
 
@@ -23,9 +24,11 @@ const EventGenresChart = ({ events }) => {
                 name: genre,
                 value: filteredEvents.length
             };
-        })
+        });
         return data;
     };
+
+    const colors = ['#abcdef', '#eeee55', '#938ac8', '#ffc0cb', '#bbcbbc'];
 
     const renderCustomizedLabel = ({ cx, cy, midAngle, outerRadius, percent, index }) => {
         const RADIAN = Math.PI / 180;
@@ -56,7 +59,13 @@ const EventGenresChart = ({ events }) => {
                     label={renderCustomizedLabel}
                     cx="50%" cy="50%"
                     outerRadius={140}
-                />
+                >
+                    {
+                        data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={colors[index]}/>
+                        ))
+                    }
+                    </Pie>
                 <Legend layout="horizontal" align="center" verticalAlign="bottom" />
                 <Tooltip cursor={{ strokeDasharray: "3 3" }} />
             </PieChart>

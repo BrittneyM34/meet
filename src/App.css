@@ -14,15 +14,46 @@ ul {
   list-style: none;
 }
 
+h1{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 p {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   margin: 5px 0;
+}
+
+
+.alerts-container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 20px; 
+  padding-top: 20px;
+  background-color: white;
+
+}
+@media (max-width: 768px)
+{
+  .charts-container {
+    grid-template-columns: 1fr;
+  } 
 }
 
 input[type="text"],
 input[type="number"] {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
-  outline: none;
+  outline:none;
   border: 1px solid #ccc;
   font-size: 14px;
   line-height: 20px;
@@ -70,43 +101,23 @@ input[type="number"] {
 }
 
 .event {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   padding: 10px 10px 35px;
   margin-bottom: 10px;
-  text-align: left;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  border-radius: 8px;
   position: relative;
+  text-align: center;
 }
 
 .details-button {
-  position: absolute;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
   border-radius: 4px;
+  text-align: center;
   outline: none;
   cursor: pointer;
-}
-
-.alerts-container {
-  position: fixed;
-  top: 0px;
-  left: 20px;
-  width: 250px;
-  z-index: 1000;
-}
-
-.charts-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-bottom: 20px; 
-  padding-top: 20px;
-  background-color: white;
-
-}
-@media (max-width: 768px)
-{
-  .charts-container {
-    grid-template-columns: 1fr;
-  } 
+  background-color: #94b1ff;
 }
