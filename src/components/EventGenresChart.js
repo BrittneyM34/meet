@@ -7,8 +7,8 @@ import {
     Tooltip
 } from 'recharts';
 
+const genres = ['React', 'Javascript', 'Node', 'jQuery', 'Angular'];
 const EventGenresChart = ({ events }) => {
-    const genres = ['React', 'Javascript', 'Node', 'jQuery', 'Angular'];
     const [data, setData] = useState([]);
 
     useEffect(() => {
